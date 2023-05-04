@@ -1,0 +1,113 @@
+
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top">
+  <div class="container d-flex align-items-center">
+
+    <h1 class="logo me-auto"><a href="./">MY TUTOR</a></h1>
+
+  </div>
+</header><!-- End Header -->
+
+<main id="main">
+
+  <div class="breadcrumbs">
+    <div class="container">
+      <h2>Register</h2>
+    </div>
+  </div>
+
+  <!-- ======= Contact Section ======= -->
+  <section id="register" class="contact">
+
+    <div class="container">
+
+      <div class="row mt-5">
+
+        <div class="col-lg-8 mt-5 mt-lg-0">
+
+<!--          <form (ngSubmit)="onSubmit()" class="php-email-form">-->
+<!--            <div class="row">-->
+<!--              <div class="col-md-6 form-group mt-3 mt-md-0">-->
+<!--                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" [(ngModel)]="formData.name" required>-->
+<!--              </div>-->
+<!--              <div class="col-md-6 form-group mt-3 mt-md-0">-->
+<!--                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" [(ngModel)]="formData.email" required>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="form-group mt-3">-->
+<!--              <input type="text" class="form-control" name="subject" id="subject" placeholder="age" [(ngModel)]="formData.age" required>-->
+<!--            </div>-->
+<!--            <div class="form-group mt-3">-->
+<!--              <input type="text" class="form-control" name="contact_number" id="contact_number" placeholder="contact number" [(ngModel)]="formData.contact" required>-->
+<!--            </div>-->
+
+<!--            <div class="form-group mt-3">-->
+<!--              <input type="password" class="form-control" name="password" id="password" placeholder="password" [(ngModel)]="formData.password" required>-->
+<!--            </div>-->
+<!--            <div class="my-3">-->
+<!--              <div class="loading">Loading</div>-->
+<!--              <div class="error-message"></div>-->
+<!--              <div class="sent-message">Your message has been sent. Thank you!</div>-->
+<!--            </div>-->
+<!--            <div class="text-center"><button type="submit">Register</button></div>-->
+<!--          </form>-->
+
+
+          <form (ngSubmit)="onSubmit()" class="php-email-form" #studentForm="ngForm">
+            <div class="row">
+              <div class="col-md-6 form-group mt-3 mt-md-0">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" [(ngModel)]="formData.name" required>
+                <div *ngIf="studentForm.controls['name'].touched && studentForm.controls['name'].invalid" class="validation-error">Name is required</div>
+              </div>
+              <div class="col-md-6 form-group mt-3 mt-md-0">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" [(ngModel)]="formData.email" required email>
+                <div *ngIf="studentForm.controls['email'].touched && studentForm.controls['email'].invalid" class="validation-error">Please enter a valid email address</div>
+              </div>
+            </div>
+            <div class="form-group mt-3">
+              <input type="text" class="form-control" name="age" id="age" placeholder="Age" [(ngModel)]="formData.age" required pattern="[0-9]{2}">
+              <div *ngIf="studentForm.controls['age'].touched && studentForm.controls['age'].invalid" class="validation-error">Please enter a valid age</div>
+            </div>
+            <div class="form-group mt-3">
+              <input type="text" class="form-control" name="contact" id="contact" placeholder="Contact Number" [(ngModel)]="formData.contact" required pattern="[0-9]{10}">
+              <div *ngIf="studentForm.controls['contact'].touched && studentForm.controls['contact'].invalid" class="validation-error">Please enter a valid 10-digit contact number</div>
+            </div>
+            <div class="form-group mt-3">
+              <input type="password" class="form-control" name="password" id="password" placeholder="Password" [(ngModel)]="formData.password" required minlength="6">
+            </div>
+            <div class="my-3">
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your message has been sent. Thank you!</div>
+            </div>
+            <div class="text-center">
+              <button type="submit" [disabled]="!studentForm.valid">Register</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- End Contact Section -->
+
+</main><!-- End #main -->
+
+<!-- ======= Footer ======= -->
+<footer id="footer">
+
+  <div class="footer-top">
+    <div class="container">
+      <div class="row">
+
+
+      </div>
+    </div>
+  </div>
+
+</footer><!-- End Footer -->
+
+<!--<div id="preloader"></div>-->
+<!--<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>-->
+
+
