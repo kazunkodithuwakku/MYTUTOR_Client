@@ -16,7 +16,7 @@
     </div>
   </div>
   <!-- ======= login Section ======= -->
-  <section id="login" >
+  <section id="login">
     <div class="container" >
 
       <div class="row">
@@ -26,51 +26,30 @@
         <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
           <!-- ======= Contact Section ======= -->
           <section id="contact" class="contact">
-
             <div class="container" >
-
               <div class="row mt-5">
-
-                <div class="col-lg-4">
-                  <div class="info">
-                    <div class="email">
-                      <i class="bi bi-envelope"></i>
-                      <h4>Email:</h4>
-                      <p>info@example.com</p>
-                    </div>
-
-                    <div class="info">
-                      <i class="bi bi-pass-fill"></i>
-                      <h4>Password:</h4>
-                    </div>
-
-                  </div>
-
-                </div>
-
                 <div class="col-lg-8 mt-5 mt-lg-4">
-
                   <form (ngSubmit)="onSubmit()" #loginForm="ngForm" class="php-email-form">
                     <div class="form-group mt-3">
-                      <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" [(ngModel)]="formData.email" required email>
+                      <label for="email">Email:</label>
+                      <input type="email" class="form-control" name="email" id="email" placeholder="info@example.com" [(ngModel)]="formData.email" required email>
                       <div *ngIf="loginForm.controls['email'].touched && loginForm.controls['email'].invalid" class="validation-error">Please enter a valid email address</div>
-                    </div>
-                    <div class="form-group mt-3">
+                      <br>
+                      <label for="pwd">Password:</label>
                       <input type="password" class="form-control" name="password" placeholder="Password" [(ngModel)]="formData.password" required minlength="6">
                     </div>
                     <div class="my-3">
                       <div class="loading">Loading</div>
                       <div class="error-message"></div>
                     </div>
-                    <div class="text-center"><button type="submit">Login</button></div>
-
+                    <div class="text-center"><button type="submit" (click)="onRegisterButtonClick()">Login</button></div>
                     <div class="container">
-                      <h5>Create new account</h5>
+                      <label>Create new account</label>
+                      <div>
+                      <button style="background-color: #555555" type="submit" (click)="onRegisterButtonClick()">Register</button>
                     </div>
-                    <div class="text-center"><button style="background-color: #555555" type="submit" (click)="onRegisterButtonClick()">Register</button></div>
-
+                    </div>
                   </form>
-
                 </div>
 
               </div>
