@@ -31,13 +31,14 @@ export class LoginComponent implements OnInit{
         response => {
           if(response){
             alert('Successfully logged in');
+            this.router.navigate(['/register']);
           }
           else
             alert('Incorrect Username or Password');
         },
         error => {
           // Handle error if the request fails
-          alert(error);
+          alert('Request to login is failed');
         }
       );
 
@@ -46,5 +47,8 @@ export class LoginComponent implements OnInit{
   }
   onRegisterButtonClick() {
     this.router.navigate(['/register']);
+  }
+  onLoginButtonClick() {
+    this.router.navigate(['/test']);
   }
 }
