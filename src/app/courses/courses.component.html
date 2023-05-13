@@ -1,0 +1,91 @@
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top">
+  <div class="container d-flex align-items-center">
+
+    <h1 class="logo me-auto"><a href="">MY TUTOR</a></h1>
+
+    <nav id="navbar" class="navbar order-last order-lg-0">
+      <ul>
+        <li><a class="active" href="../index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="trainers.html">Teachers</a></li>
+
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
+
+  </div>
+</header><!-- End Header -->
+
+<main id="main">
+
+  <!-- ======= Breadcrumbs ======= -->
+  <div class="breadcrumbs">
+    <div class="container">
+      <h2>Courses</h2>
+    </div>
+  </div><!-- End Breadcrumbs -->
+
+  <!-- ======= Courses Section ======= -->
+  <section id="courses" class="courses" *ngFor="let course of courseData" style="margin-left: 10%;margin-right: 10%; margin-top: -3%;overflow: scroll; height: 80%;">
+    <div class="course-content course-item d-flex" >
+    <div class="container">
+      <div class="left-div">
+        <img src="https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Image" style="width: 300px; height: 150px;">
+      </div>
+      <div class="right-div" style="margin-right: -10%">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 d-flex" >
+            <div class="course-item">
+              <div class="course-content" >
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h4>{{course.topic}}</h4>
+                  <p class="price">{{course.price}}</p>
+                </div>
+                <h3><a>{{course.subTopic}}</a></h3>
+                <p>{{course.description}}</p>
+                <div class="trainer d-flex justify-content-between align-items-center">
+                  <div class="trainer-profile d-flex align-items-center">
+                    <img src="../assets/img/trainers/trainer-1.jpg" class="img-fluid" alt="">
+                    <span>{{course.lecturer}}</span>
+                  </div>
+                  <div class="trainer-rank d-flex align-items-center">
+                    <i class="bx bx-user"></i>&nbsp;{{course.followingCount}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="container">
+
+
+
+    </div>
+  </section><!-- End Courses Section -->
+
+</main><!-- End #main -->
+
+<!-- ======= Footer ======= -->
+<footer id="footer">
+
+  <div class="container d-md-flex py-4">
+
+    <div class="me-md-auto text-center text-md-start">
+
+    </div>
+    <div class="social-links text-center text-md-right pt-3 pt-md-0">
+      <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+      <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+      <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+      <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+      <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+    </div>
+  </div>
+</footer><!-- End Footer -->

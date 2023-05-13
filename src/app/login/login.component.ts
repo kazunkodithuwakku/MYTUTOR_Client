@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit{
         response => {
           if(response){
             alert('Successfully logged in');
-            this.router.navigate(['/register']);
+            this.router.navigate(['/courses']);
           }
           else
             alert('Incorrect Username or Password');

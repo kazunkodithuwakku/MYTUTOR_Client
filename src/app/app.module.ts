@@ -6,12 +6,15 @@ import { AppComponent } from './app.component';
 import { RegisterStudentsComponent } from './register-students/register-students.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
+import { CoursesComponent } from './courses/courses.component';
+import {MyTutorServiceService} from "./services/myTutorService.service";
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterStudentsComponent,
-    LoginComponent
+    LoginComponent,
+    CoursesComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +22,7 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [MyTutorServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
