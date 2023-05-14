@@ -3,6 +3,11 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
 import { Router } from '@angular/router';
 
+interface LoginResponse {
+  success: boolean;
+  userType: string;
+}
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -26,12 +31,15 @@ export class LoginComponent implements OnInit{
   };
   onSubmit() {
     // Send POST request to the server
-    this.http.post('http://localhost:5000/loginStudents', this.formData)
+    this.http.post<LoginResponse>('http://localhost:5000/loginStudents', this.formData)
       .subscribe(
         response => {
           if(response){
             alert('Successfully logged in');
-            this.router.navigate(['/courses']);
+            if(response.userType==="Instructor")
+              this.router.navigate(['/addCourse']);
+            else
+              this.router.navigate(['/courses']);
           }
           else
             alert('Incorrect Username or Password');
