@@ -4,7 +4,7 @@ import {HttpClient} from "@angular/common/http";
 import { Router } from '@angular/router';
 
 interface LoginResponse {
-  success: boolean;
+  status: boolean;
   userType: string;
 }
 
@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit{
     this.http.post<LoginResponse>('http://localhost:5000/loginUser', this.formData)
       .subscribe(
         response => {
-          if(response){
+          if(response.status){
             alert('Successfully logged in');
             if(response.userType==="Instructor")
               this.router.navigate(['/addCourse']);

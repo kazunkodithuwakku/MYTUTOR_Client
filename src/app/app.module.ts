@@ -9,6 +9,8 @@ import { LoginComponent } from './login/login.component';
 import { CoursesComponent } from './courses/courses.component';
 import {MyTutorServiceService} from "./services/myTutorService.service";
 import { AddCourseComponent } from './add-course/add-course.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { AddCourseComponent } from './add-course/add-course.component';
     RegisterStudentsComponent,
     LoginComponent,
     CoursesComponent,
-    AddCourseComponent
+    AddCourseComponent,
+    AboutUsComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,

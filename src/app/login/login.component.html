@@ -3,7 +3,7 @@
 <header id="header" class="fixed-top">
   <div class="container d-flex align-items-center">
 
-    <h1 class="logo me-auto"><a href="./">MY TUTOR</a></h1>
+    <h1 class="logo me-auto"><a href="/login">MY TUTOR</a></h1>
 
   </div>
 </header><!-- End Header -->
@@ -18,7 +18,7 @@
   <!-- ======= login Section ======= -->
   <section id="login">
     <div class="container" >
-
+      <div class="left-div" style="padding-left: 5%; padding-top: 5%">
       <div class="row">
         <div class="col-lg-6 order-1 order-lg-2">
           <img src="../../app/assets/img/hero-bg.jpg" class="img-fluid" alt="">
@@ -27,14 +27,14 @@
           <!-- ======= Contact Section ======= -->
           <section id="contact" class="contact">
             <div class="container" >
-              <div class="row mt-5">
+
                 <div class="col-lg-8 mt-5 mt-lg-4">
                   <form (ngSubmit)="onSubmit()" #loginForm="ngForm" class="php-email-form">
-                    <div class="form-group mt-3">
+                    <div class="form-group mt-6">
                       <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" [(ngModel)]="formData.email" required email>
                       <div *ngIf="loginForm.controls['email'].touched && loginForm.controls['email'].invalid" class="validation-error">Please enter a valid email address</div>
                     </div>
-                    <div class="form-group mt-3">
+                    <div class="form-group mt-6">
                       <input type="password" class="form-control" name="password" placeholder="Password" [(ngModel)]="formData.password" required minlength="6">
                     </div>
                     <div class="my-3">
@@ -43,21 +43,30 @@
                     </div>
                     <div class="text-center"><button type="submit">Login</button></div>
 
-                    <div class="container">
-                      <label>Create new account</label>
-                      <div>
-                      <button style="background-color: #555555" type="submit" (click)="onRegisterButtonClick()">Register</button>
+                    <div class="container" style="margin-top: 50%">
+                        <table>
+                          <tr align="left">
+                             <td>Create new account : </td>
+                            <td> <button style="background-color: #555555" type="submit" (click)="onRegisterButtonClick()">Register</button>
+                          </tr>
+                        </table>
+
                     </div>
-                    </div>
+
                   </form>
                 </div>
-
-              </div>
-
             </div>
           </section><!-- End Contact Section -->
 
         </div>
+      </div>
+      </div>
+      <div class="right-div" style="padding-left: 5%">
+
+        <div class="container" style="margin-top: 2%;margin-bottom: 5%;margin-right: 5%" >
+          <img src="https://img.freepik.com/free-vector/security-concept-illustration_114360-497.jpg?w=1380&t=st=1684073770~exp=1684074370~hmac=cef7a7643b041c24d2b8a59ea473cf51b8a7fefd9a0c2e34d8e1d2617f42afc8" alt="Image" style="width: 80%; height: 80%">
+        </div>
+
       </div>
 
     </div>

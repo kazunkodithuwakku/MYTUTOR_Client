@@ -15,6 +15,7 @@ export class AddCourseComponent implements OnInit{
   constructor(private http: HttpClient, private formBuilder: FormBuilder,  private router: Router) {
     this.courseForm = this.formBuilder.group({
       name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
       topic: ['', [Validators.required]],
       subTopic: ['', [Validators.required]],
       description: ['', [Validators.required]],
@@ -31,7 +32,8 @@ export class AddCourseComponent implements OnInit{
     subTopic:'',
     description:'',
     price:'',
-    studentCount:''
+    studentCount:'',
+    email:''
   };
   onSubmit() {
     // Send POST request to the server
@@ -40,6 +42,7 @@ export class AddCourseComponent implements OnInit{
         response => {
           alert('Successfully added');
           this.router.navigate(['/addCourse']);
+          this.courseForm.reset();
         },
         error => {
           // Handle error if the request fails
@@ -53,5 +56,6 @@ export class AddCourseComponent implements OnInit{
     this.formData.description = '';
     this.formData.price = '';
     this.formData.studentCount = '';
+    this.formData.email = '';
   }
 }

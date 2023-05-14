@@ -31,4 +31,16 @@ export class CoursesComponent implements OnInit {
       );
     }
 
+  sendEmail(course: any) {
+    const recipient = 'kazun2.kt@gmail.com';
+    const sub = 'Enrolling to the course - '+ course.topic;
+    const bdy = 'Hello Sir/Madam' +
+      'I would like to enrole for this course. Please send me the payment details.' +
+      'Thanks';
+
+    const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(sub)}&body=${encodeURIComponent(bdy)}`;
+
+    window.location.href = mailtoLink;
+  }
+
 }

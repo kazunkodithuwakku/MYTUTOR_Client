@@ -10,3 +10,14 @@
 .left-div {
   width: 30%;
 }
+
+.custom-button {
+  display: inline-block;
+  font-size: 12px;
+  padding: 8px 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

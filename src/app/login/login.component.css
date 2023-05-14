@@ -1,0 +1,11 @@
+.right-div {
+  width: 50%;
+}
+
+.left-div {
+  width: 50%;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+}
