@@ -17,18 +17,20 @@ export class RegisterStudentsComponent implements OnInit{
       email: ['', [Validators.required, Validators.email]],
       age: ['', [Validators.required, Validators.pattern('[0-9]{10}')]],
       contact: ['', [Validators.required, Validators.pattern('[0-9]{10}')]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      role: ['', [Validators.required]]
     });
   }
   ngOnInit() {
   }
-
+  
   formData = {
     name: '',
     email: '',
     age:'',
     contact:'',
-    password:''
+    password:'',
+    role:'',
   };
   onSubmit() {
     // Send POST request to the server
@@ -49,5 +51,6 @@ export class RegisterStudentsComponent implements OnInit{
     this.formData.age = '';
     this.formData.contact = '';
     this.formData.password = '';
+    this.formData.role = '';
   }
 }

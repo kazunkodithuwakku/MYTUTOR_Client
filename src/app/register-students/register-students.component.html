@@ -72,12 +72,12 @@
               <label>Select your role:</label>
               <table>
                 <tr align="left">
-                  <td><input type="radio" id="student" name="role" value="Student"/></td>
-                  <td><label>Student</label></td>
+                  <td><input type="radio" id="student" name="role" value="Student" [(ngModel)]="formData.role"/></td>
+                  <td><label for="student">Student</label></td>
                 </tr>
                 <tr align="left">
-                      <td><input type="radio" id="instructor" name="role" value="Instructor"/></td>
-                      <td><label>Instructor</label></td>
+                    <td><input type="radio" id="instructor" name="role" value="Instructor" [(ngModel)]="formData.role"/></td>
+                    <td><label for="instructor">Instructor</label></td>
                 </tr>
               </table>
             </div>
