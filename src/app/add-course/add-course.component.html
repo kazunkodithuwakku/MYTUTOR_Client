@@ -1,0 +1,92 @@
+
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top">
+  <div class="container d-flex align-items-center">
+
+    <h1 class="logo me-auto"><a href="./">MY TUTOR</a></h1>
+
+    <nav id="navbar" class="navbar order-last order-lg-0">
+      <ul>
+        <li><a class="active" href="../index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav>
+
+  </div>
+</header><!-- End Header -->
+
+<main id="main">
+
+  <div class="breadcrumbs">
+    <div class="container">
+      <h2>Add new course</h2>
+    </div>
+  </div>
+
+  <!-- ======= Contact Section ======= -->
+  <section id="register" class="contact">
+
+    <div class="container">
+
+      <div class="row mt-5">
+
+        <div class="col-lg-8 mt-5 mt-lg-0">
+          <form (ngSubmit)="onSubmit()" class="php-email-form" #courseForm="ngForm">
+              <div class="col-md-6 form-group mt-3 mt-md-0">
+                <input type="text" name="topic" class="form-control" id="topic" placeholder="Topic" [(ngModel)]="formData.topic" required>
+                <div *ngIf="courseForm.controls['topic'].touched && courseForm.controls['topic'].invalid" class="validation-error" style="color: red">Topic is required</div>
+              </div>
+              <div class="col-md-6 form-group mt-3 mt-md-0">
+                <input type="text" name="subTopic" class="form-control" id="subTopic" placeholder="Sub Topic" [(ngModel)]="formData.subTopic" required>
+                <div *ngIf="courseForm.controls['subTopic'].touched && courseForm.controls['subTopic'].invalid" class="validation-error" style="color: red">Sub Topic is required</div>
+              </div>
+              <div class="col-md-6 form-group mt-3 mt-md-0">
+                <input type="text" name="description" class="form-control" id="description" placeholder="Course Description" [(ngModel)]="formData.description" required  pattern=".{120,}">
+                <div *ngIf="courseForm.controls['description'].touched && courseForm.controls['description'].invalid" class="validation-error" style="color: red">Description is required with minimum 100 characters</div>
+              </div>
+            <div class="form-group mt-3">
+              <input type="text" class="form-control" name="price" id="price" placeholder="Price" [(ngModel)]="formData.price" required pattern="[0-9]{1,5}">
+              <div *ngIf="courseForm.controls['price'].touched && courseForm.controls['price'].invalid" class="validation-error" style="color: red">Please enter a valid price</div>
+            </div>
+            <div class="form-group mt-3">
+              <input type="text" class="form-control" name="studentCount" id="studentCount" placeholder="Student Capacity" [(ngModel)]="formData.studentCount" required pattern="[0-9]{1,5}">
+              <div *ngIf="courseForm.controls['studentCount'].touched && courseForm.controls['studentCount'].invalid" class="validation-error" style="color: red">Please enter valid student capacity</div>
+            </div>
+            <div class="col-md-6 form-group mt-3 mt-md-0">
+              <input type="text" name="name" class="form-control" id="name" placeholder="Lecturer name" [(ngModel)]="formData.name" required>
+              <div *ngIf="courseForm.controls['name'].touched && courseForm.controls['name'].invalid" class="validation-error" style="color: red">Lecturer name is required</div>
+            </div>
+            <div class="my-3">
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your message has been sent. Thank you!</div>
+            </div>
+            <div class="text-center">
+              <button type="submit" [disabled]="!courseForm.valid">Add Course</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- End Contact Section -->
+
+</main><!-- End #main -->
+
+<!-- ======= Footer ======= -->
+<footer id="footer">
+
+  <div class="footer-top">
+    <div class="container">
+      <div class="row">
+
+
+      </div>
+    </div>
+  </div>
+
+</footer><!-- End Footer -->
+
