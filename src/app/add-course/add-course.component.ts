@@ -50,12 +50,12 @@ export class AddCourseComponent implements OnInit{
         }
       );
 
-    this.formData.name = '';
+/*     this.formData.name = '';
     this.formData.topic = '';
     this.formData.subTopic = '';
     this.formData.description = '';
     this.formData.price = '';
     this.formData.studentCount = '';
-    this.formData.email = '';
+    this.formData.email = ''; */
   }
 }

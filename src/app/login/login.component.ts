@@ -50,8 +50,8 @@ export class LoginComponent implements OnInit{
         }
       );
 
-    this.formData.email = '';
-    this.formData.password = '';
+/*     this.formData.email = '';
+    this.formData.password = ''; */
   }
   onRegisterButtonClick() {
     this.router.navigate(['/register']);

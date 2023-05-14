@@ -33,7 +33,6 @@ export class RegisterStudentsComponent implements OnInit{
     role:'',
   };
   onSubmit() {
-    alert(this.formData.contact);
     // Send POST request to the server
     this.http.post('http://localhost:5000/registerUser', this.formData)
       .subscribe(
@@ -47,11 +46,11 @@ export class RegisterStudentsComponent implements OnInit{
         }
       );
 
-    this.formData.name = '';
+/*     this.formData.name = '';
     this.formData.email = '';
     this.formData.age = '';
     this.formData.contact = '';
     this.formData.password = '';
-    this.formData.role = '';
+    this.formData.role = ''; */
   }
 }
