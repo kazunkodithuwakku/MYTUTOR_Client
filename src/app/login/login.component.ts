@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit{
   };
   onSubmit() {
     // Send POST request to the server
-    this.http.post<LoginResponse>('http://localhost:5000/loginStudents', this.formData)
+    this.http.post<LoginResponse>('http://localhost:5000/loginUser', this.formData)
       .subscribe(
         response => {
           if(response){

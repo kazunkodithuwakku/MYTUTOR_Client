@@ -15,7 +15,7 @@ export class RegisterStudentsComponent implements OnInit{
     this.studentForm = this.formBuilder.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      age: ['', [Validators.required, Validators.pattern('[0-9]{10}')]],
+      age: ['', [Validators.required, Validators.pattern('[0-9]{1,5}')]],
       contact: ['', [Validators.required, Validators.pattern('[0-9]{10}')]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       role: ['', [Validators.required]]
@@ -23,7 +23,7 @@ export class RegisterStudentsComponent implements OnInit{
   }
   ngOnInit() {
   }
-  
+
   formData = {
     name: '',
     email: '',
@@ -33,8 +33,9 @@ export class RegisterStudentsComponent implements OnInit{
     role:'',
   };
   onSubmit() {
+    alert(this.formData.contact);
     // Send POST request to the server
-    this.http.post('http://localhost:5000/registerStudent', this.formData)
+    this.http.post('http://localhost:5000/registerUser', this.formData)
       .subscribe(
         response => {
           alert('Successfully Registered');
